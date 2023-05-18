@@ -44,6 +44,8 @@
             'web/static/src/core/browser/browser.js',
             'web/static/src/core/registry.js',
             'web/static/src/core/assets.js',
+            # 'owl_playground/static/src/counter.*',
+            # 'owl_playground/static/src/playground.*',
             'owl_playground/static/src/**/*',
         ],
     }
