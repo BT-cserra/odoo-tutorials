@@ -1,7 +1,7 @@
 /** @odoo-module **/
 
 import { Todo } from "../todo/todo"
-import { Component, useState } from "@odoo/owl";
+import { Component, useState, useRef, onMounted } from "@odoo/owl";
 
 
 export class TodoList extends Component {
@@ -16,6 +16,11 @@ export class TodoList extends Component {
             {id: 3, description: "three", done: true},
         ]);
         this.nextId = this.todoList.length + 1;
+        this.inputRef = useRef("input");
+
+        onMounted(() => {
+            this.inputRef.el.focus();
+        });
     }
 
     addTodo(ev) {
