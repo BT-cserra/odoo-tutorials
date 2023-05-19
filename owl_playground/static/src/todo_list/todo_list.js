@@ -11,11 +11,7 @@ export class TodoList extends Component {
     static components = { Todo };
 
     setup() {
-        this.todoList = useState([
-            {id: 1, description: "one", done: false},
-            {id: 2, description: "two", done: true},
-            {id: 3, description: "three", done: true},
-        ]);
+        this.todoList = useState([]);
         this.nextId = this.todoList.length + 1;
 
         useAutofocus("input");
@@ -28,6 +24,11 @@ export class TodoList extends Component {
             )
             ev.target.value = "";
         }
+    }
+
+    toggleTodo(todoId) {
+        const todo = this.todoList.find(e => e.id === todoId);
+        todo.done = !todo.done;
     }
 
 }

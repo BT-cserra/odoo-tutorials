@@ -9,5 +9,11 @@ export class Todo extends Component {
         id: {type: Number},
         description: {type: String},
         done: {type: Boolean},
+        toggleState: { type: Function },
     }
+
+    onClick(ev) {
+        this.props.toggleState(this.props.id);
+    }
+
 }

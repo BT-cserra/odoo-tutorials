@@ -6,7 +6,9 @@
             <input t-ref="input" type="text" placeholder="Enter a new task." t-on-keyup="addTodo"/>
         </div>
         <t t-foreach="todoList" t-as="todo" t-key="todo.id">
-            <Todo id="todo.id" description="todo.description" done="todo.done"/>
+            <Todo id="todo.id" description="todo.description" done="todo.done"
+                  toggleState.bind="toggleTodo"
+            />
         </t>
     </t>
 
