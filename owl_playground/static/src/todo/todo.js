@@ -10,10 +10,15 @@ export class Todo extends Component {
         description: {type: String},
         done: {type: Boolean},
         toggleState: { type: Function },
+        removeTodo: { type: Function },
     }
 
     onClick(ev) {
         this.props.toggleState(this.props.id);
+    }
+
+    onRemove(ev) {
+        this.props.removeTodo(this.props.id);
     }
 
 }
