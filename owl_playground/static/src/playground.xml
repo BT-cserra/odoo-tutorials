@@ -6,6 +6,11 @@
             hello world
         </div>
         <Counter />
+        <Card>
+            <t t-set-slot="title">Card title</t>
+            <p class="card-text">Some quick example text...</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </Card>
         <TodoList />
     </t>
 
